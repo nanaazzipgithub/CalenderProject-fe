@@ -1,0 +1,74 @@
+@font-face {
+    font-family: 'Intel';
+    src: url('path/to/Intel.woff2') format('woff2'),
+         url('path/to/Intel.woff') format('woff');
+}
+body {
+    font-family: 'Intel';
+    width: 1088px;
+    height: 1080px;
+    top: -360px;
+    left: 3798px;
+    border-radius: 1px;
+    background-color: #DDDDDD;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.modal {
+    width: 942px;
+    height: 800px;
+    background-color: #43E2BD;
+    position: absolute;
+    top: 140px;
+    left: 489px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* 모달 헤더 스타일 */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.title-container {
+    display: flex;
+    align-items: center;
+
+/* 모달 제목 스타일 */
+.modal-title {
+    width: 433px;
+    height: 70px;
+    position: absolute;
+    top: 159px;
+    left: 535px;
+    font-family: 'Noto Sans KR';
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 69.5px;
+    letter-spacing: -0.02em;
+    color: #222222;
+    text-align: left;
+   
+}
+.close-btn {
+    width: 20px;
+    top: 163px;
+    left: 1385px;
+    background-color: #222222; 
+}
+.edit-btn {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 185px;
+    left: 535px;
+}
+
+
+    
