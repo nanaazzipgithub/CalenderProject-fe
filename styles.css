@@ -1,0 +1,246 @@
+
+*{
+    font-family: 'intel KR';
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .modal {
+    background-color: #43E2BD;
+    border-radius: 20px;
+    width: 942px;
+    height: 800px;
+    font-family: 'Noto Sans KR', sans-serif;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .modal-header {
+    background-color: #43E2BD;
+    color: black;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+  }
+  
+  #edit-icon {
+    margin-right: 22px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .modal-title {
+    font-size: 48px;
+    font-weight: 700;
+    flex-grow: 1;
+  }
+  
+  #close-btn {
+    align-self: flex-start;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .modal-content {
+    margin: 0 5px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 20px 20px 0 0;
+  }
+  
+  .input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .input-group p {
+    font-size: 24px;
+    font-weight: 400;
+  }
+  
+  .date-input, .time-input {
+    padding: 6px 16px;
+    border: 1px solid #DDDDDD;
+    border-radius: 7px;
+    background-color: #F6F6F6;
+    font-size: 24px;
+    font-weight: 600;
+    outline: none;
+  }
+  
+  .time-badge {
+    display: flex;
+    align-items: center;
+    column-gap: 6px;
+    color: #AAAAAA;
+    font-size: 15px;
+    font-weight: 500;
+    margin-left: 17px;
+  }
+  
+  .textarea-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  textarea {
+    width: 95%;
+    height: 315px;
+    border: 1px solid #DDDDDD;
+    border-radius: 7px;
+    background-color: #F6F6F6;
+    padding: 20px 26px;
+    font-size: 26px;
+    resize: none;
+    outline: none;
+  }
+  
+  .modal-footer {
+    margin: 0 5px;
+    display: flex;
+    justify-content: center;
+    column-gap: 50px;
+    background-color: white;
+    border-radius: 0 0 20px 20px;
+    padding-bottom: 34px;
+  }
+  
+  .footer-btn {
+    width: 130px;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 24px;
+    background-color: #43E2BD;
+    color: white;
+    margin: 0 35px;
+  }
+  
+  .date-picker {
+    position: absolute;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 300px;
+    padding: 20px;
+    z-index: 1000;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .header button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  #prevMonth, #nextMonth {
+    font-weight: bold;
+  }
+  
+  #currentMonth {
+    font-weight: bold;
+  }
+  
+  .weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  #calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+  }
+  
+  .sun {
+    color: red;
+  }
+  
+  .sat {
+    color: blue;
+  }
+  
+  .day {
+    text-align: center;
+    padding: 2px;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2px;
+  }
+  
+  .day.other-month {
+    color: #ccc;
+  }
+  
+  .day:hover, .day.selected {
+    background-color: #6277e0;
+    color: white;
+  }
+  
+  .day.today {
+    font-weight: bold;
+  }
+  
+  .time-picker {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .time-picker input {
+    width: 120px;
+    text-align: center;
+    font-size: 18px;
+    border: none;
+    outline: none;
+  }
+  
+  .time-picker input:focus {
+    font-weight: bold;
+  }
+  
+  #confirm {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #6277e0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+  
+  .date-input, .time-input {
+    cursor: pointer;
+  }
