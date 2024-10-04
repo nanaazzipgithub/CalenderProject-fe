@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>투두리스트 메인페이지</title>
+    <link rel="stylesheet" href="./src/css/common.css" />
+    <link rel="stylesheet" href="./src/css/index.css" />
+    <link rel="stylesheet" href="./src/css/calendar.css" />
+  </head>
+  <body>
+    <main>
+      <!-------------------------- 메인페이지 영역 -------------------------->
+      <!-- 메인페이지 사이드바 -->
+      <article class="sidebar">
+        <!-- 사이드바상단 -->
+        <div class="sidebar-top">
+          <!-- 사이드바상단 로고 -->
+          <section class="sidebar-logo">
+            <h1 class="blind">PRONEND LOGO</h1>
+            <a href="#"
+              ><img src="./src/assets/img/main-logo.svg" alt="로고이미지"
+            /></a>
+          </section>
+          <!-- 사이드바상단 날씨 -->
+          <section class="sidebar-weather">
+            <h2 class="blind"></h2>
+            <div class="sidebar-weather-info">
+              <p class="sidebar-weather-text"></p>
+              <p class="sidebar-weather-temp"></p>
+            </div>
+            <img alt="날씨아이콘" class="sidebar-weather-icon" />
+          </section>
+        </div>
+        <!-- 사이드바하단 -->
+        <div class="sidebar-bottom">
+          <!-- 사이드바하단 간단한일정 -->
+          <section class="sidebar-schedule">
+            <h2 class="blind">일정관리</h2>
+            <p class="sidebar-today"><span>오늘</span></p>
+            <ul class="sidebar-schedule-list">
+              <li>
+                <a href="#">
+                  <div class="sidebar-list-box">
+                    <div class="sidebar-list-cont">
+                      <img src="./src/assets/img/list-circle.svg" alt="" />
+                      <!-- <span>JavaScript Study</span> -->
+                    </div>
+                    <div class="sidebar-list-close">
+                      <img src="./src/assets/img/close-btn.svg" alt="" />
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="sidebar-list-box">
+                    <div class="sidebar-list-cont">
+                      <img src="./src/assets/img/list-circle.svg" alt="" />
+                      <!-- <span>CSS Study</span> -->
+                    </div>
+                    <div class="sidebar-list-close">
+                      <img src="./src/assets/img/close-btn.svg" alt="" />
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+            <div class="sidebar-list-box sidebar-new-item">
+              <div class="sidebar-list-cont">
+                <img src="./src/assets/img/list-circle.svg" alt="" />
+                <!-- <span class="sidebar-schedule-input"></span> -->
+                <input type="text" class="sidebar-schedule-input" />
+              </div>
+            </div>
+            <button type="submit" class="sidebar-schedule-add">
+              <img src="./src/assets/img/list-add.svg" />
+              <span>일정 추가</span>
+            </button>
+          </section>
+        </div>
+      </article>
+      <!-- 메인페이지 달력 -->
+      <article class="calendar">
+        <!-- 달력 테두리-->
+        <section class="calendar-box">
+          <h2 class="blind">달력</h2>
+          <div class="calendar-box-head">
+            <!-- 달력 왼쪽 -->
+            <p class="calendar-info">
+              <span class="calendar-month"></span>
+              <span class="calendar-year"></span>
+            </p>
+            <!-- 달력 오른쪽 -->
+            <div class="calendar-select">
+              <div class="calendar-select-year">
+                <p>
+                  <span class="calendar-select-year-text">년도 선택</span>
+                  <img src="./src/assets/img/select-arrow.svg" />
+                </p>
+                <div class="calendar-select-year-box">
+                  <ul class="calendar-select-year-list">
+                    <li>2021</li>
+                    <li>2022</li>
+                    <li>2023</li>
+                    <li>2024</li>
+                    <li>2025</li>
+                    <li>2026</li>
+                    <li>2027</li>
+                    <li>2028</li>
+                    <li>2029</li>
+                    <li>2030</li>
+                    <li>2031</li>
+                    <li>2032</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="calendar-select-month">
+                <p>
+                  <span class="calendar-select-month-text">월 선택</span>
+                  <img src="./src/assets/img/select-arrow.svg" />
+                </p>
+                <div class="calendar-select-month-box">
+                  <ul class="calendar-select-month-list">
+                    <li>01</li>
+                    <li>02</li>
+                    <li>03</li>
+                    <li>04</li>
+                    <li>05</li>
+                    <li>06</li>
+                    <li>07</li>
+                    <li>08</li>
+                    <li>09</li>
+                    <li>10</li>
+                    <li>11</li>
+                    <li>12</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="calendar-box-cont">
+            <!-- 여기에 캘린더 들어올 예정 -->
+            <div class="calendar-arrow">
+              <div class="arrow-left">
+                <img src="./src/assets/img/arrow-left.svg" />
+              </div>
+              <!-- 캘린더 작업 부분 -->
+              <div class="calendar-date"></div>
+              <div class="arrow-right">
+                <img src="./src/assets/img/arrow-right.svg" />
+              </div>
+            </div>
+          </div>
+        </section>
+      </article>
+      <!-------------------------- 메인페이지 End -------------------------->
+      <!-------------------------- 일정 조회 모달 -------------------------->
+      <section class="modal-schedule-view">
+        <h2 class="blind">일정 조회 모달 창</h2>
+        <div class="modal-view-container">
+          <section class="modal-view-date">
+            <h2 class="blind">일정 날짜</h2>
+            <div class="modal-date-display">
+              <p class="view-year">2024</p>
+              <p class="view-month">07</p>
+              <span class="view-separator">/</span>
+              <p class="view-day">26</p>
+            </div>
+            <button
+              class="view-close-button"
+              type="button"
+              aria-label="닫기 버튼"
+            ></button>
+            <button type="button" class="view-add-button">추가</button>
+          </section>
+          <section class="modal-view-content">
+            <h2 class="blind">일정 내용</h2>
+          </section>
+        </div>
+      </section>
+      <!-------------------------- 일정 조회 모달 End -------------------------->
+      <!-------------------------- 일정 관리 모달 영역 -------------------------->
+      <section class="modal-schedule-edit" style="display: none">
+        <!-- 달력 기능 작업 위해 display none으로 설정  ==================> 달력 css 작업 후 스타일 제거 -->
+        <h2 class="blind">일정 관리 모달 창</h2>
+        <div class="modal-edit-container">
+          <section class="modal-edit-cont">
+            <div class="modal-header">
+              <input
+                type="text"
+                class="modal-title"
+                placeholder="제목을 입력하세요"
+              />
+              <button id="close-btn">
+                <img src="./src/assets/img/exit-btn.svg" />
+              </button>
+            </div>
+            <div class="modal-content">
+              <form class="modal-content-top">
+                <!-- 시작일자 영역 -->
+                <div class="modal-content-start">
+                  <div class="input-group">
+                    <p>
+                      시작날짜ㅤ<span
+                        id="selectedDate"
+                        class="start-date-input"
+                      ></span>
+                    </p>
+                  </div>
+                  <div class="input-group">
+                    <p>
+                      시작시간ㅤ<span
+                        id="selectedTime"
+                        class="start-time-input"
+                      ></span>
+                    </p>
+                  </div>
+                </div>
+                <!-- 완료일자 영역 -->
+                <div class="modal-content-end">
+                  <div class="input-group">
+                    <p>
+                      완료날짜ㅤ<span
+                        id="completeDate"
+                        class="end-date-input"
+                      ></span>
+                    </p>
+                  </div>
+                  <div class="input-group">
+                    <p>
+                      완료시간ㅤ<span
+                        id="completeTime"
+                        class="end-time-input"
+                      ></span>
+                    </p>
+                  </div>
+                </div>
+                <!-- 반복주기 영역
+                <div class="modal-content-repeat">
+                  <div class="input-group">
+                    <p>반복주기</p>
+                    <textarea
+                      id="repeat-num"
+                      oninput="repeatValue(this, 3)"
+                    ></textarea>
+                    <div class="repeat-box">
+                      <p class="repeat-text">일간 반복</p>
+                      <ul class="repeat-list">
+                        <li class="no-repeat"><span>반복 없음</span></li>
+                        <li class="day-repeat"><span>일간 반복</span></li>
+                        <li class="weak-repeat"><span>주간 반복</span></li>
+                        <li class="month-repeat"><span>월간 반복</span></li>
+                        <li class="year-repeat"><span>연간 반복</span></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div> -->
+              </form>
+              <form class="textarea-container">
+                <textarea
+                  placeholder="내용을 입력하세요..."
+                  class="schedule-memo"
+                ></textarea>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" id="exit-btn" class="footer-btn">
+                취소
+              </button>
+              <button type="button" id="save-btn" class="footer-btn">
+                저장
+              </button>
+              <button type="button" id="clear-btn" class="footer-btn">
+                삭제
+              </button>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <div id="datePicker" class="date-picker" style="display: none">
+        <div class="header">
+          <button id="prevMonth">&lt;</button>
+          <span id="currentMonth"></span>
+          <button id="nextMonth">&gt;</button>
+        </div>
+        <div class="weekdays">
+          <div class="sun">일</div>
+          <div>월</div>
+          <div>화</div>
+          <div>수</div>
+          <div>목</div>
+          <div>금</div>
+          <div class="sat">토</div>
+        </div>
+        <div id="calendar"></div>
+        <div class="start-time">
+          <input type="number" id="start-hour" data-max-length="2" min="00" max="23" value="00"/>
+          <span>:</span>
+          <input
+            type="number"
+            id="start-minute"
+            data-max-length="2"
+            min="00"
+            max="59"
+            value="00"
+          />
+          <button id="start-confirm">확인</button>
+        </div>
+        <div class="end-time">
+          <input type="number" id="end-hour" data-max-length="2" min="00" max="23" value="00"/>
+          <span>:</span>
+          <input type="number" id="end-minute" data-max-length="2" min="00" max="59" value="00"/>
+          <button id="end-confirm">확인</button>
+        </div>
+      </div>
+      <!-------------------------- 일정 관리 모달 END -------------------------->
+
+      <!-------------------------- 일정 삭제 모달 Start  -------------------------->
+      <section class="modal-schedule-delete">
+        <h2 class="blind">일정 삭제 모달 창</h2>
+        <div class="modal-delete-content">
+          <p class="delete-txt">
+            <strong>해당</strong> 일정을 삭제하시겠습니까?
+          </p>
+          <div class="delete-btn">
+            <button type="button" class="delete-confirmation-btn">확인</button>
+            <button type="button" class="delete-cancel-btn">취소</button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="./src/js/calendar.js" defer></script>
+    <!-- <script type="module" src="./src/js/modal_schedule.js"></script> -->
+    <script type="module" src="./src/js/modal_modulized.js" defer></script>
+    <script
+      type="module"
+      src="./src/js/modal_schedule_create.js"
+      defer
+    ></script>
+    <!-- <script type="module" src="./src/js/sidebar.js" defer></script> -->
+  </body>
+</html>

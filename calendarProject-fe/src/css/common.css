@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Dongle&family=Gowun+Dodum&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+KR:wght@100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Dongle&family=Gowun+Dodum&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* 모든 요소에 대해 박스 사이징을 border-box로 설정 */
+* {
+    box-sizing: border-box;
+}
+
+/* HTML 요소의 기본 폰트 설정 */
+html {
+    font-family: "Noto Sans Kr",sans-serif;
+    font-size: 1rem;
+}
+
+/* 마진과 패딩 초기화 */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+}
+
+/* 기본 타이포그래피 설정 */
+body, h1, h2, h3, h4, h5, h6, p, a, span, input, select, button, time, strong {
+    font-family: "Noto Sans Kr",sans-serif;
+    font-size: 1rem;
+    color: #222;
+    line-height: 1.2;
+    letter-spacing: -2;
+}
+
+/* 목록 스타일 제거 */
+ol, ul {
+    list-style: none;
+}
+
+/* 링크의 기본 스타일 제거 */
+a {
+    color: #222;
+    text-decoration: none;
+}
+
+/* 가상 요소에 대한 박스 사이징 설정 */
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+/* 이미지와 필드셋 테두리 제거 */
+img, fieldset {
+    border: 0 none;
+}
+
+/* 인라인 이미지의 수직 정렬 설정 */
+img {
+    vertical-align: top;
+}
+
+/* float 사용 후 clear 설정을 위한 유틸리티 클래스 */
+.clear::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/* 컨텐츠 화면에서 숨기기 */
+.blind {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+}
+
+/* 폼 요소의 수직 정렬 설정 */
+input, button, select, textarea {
+    vertical-align: middle;
+}
+
+/* 버튼의 기본 스타일 설정 */
+button {
+    cursor: pointer;
+    transition: all 0.1s linear;
+    border: none;
+    background-color: transparent;
+}
+
+/* 포커스 아웃라인 제거 */
+:focus {
+    outline: 0;
+}
+
+/* 테이블 기본 스타일 설정 */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* 폼 요소의 폰트 상속 */
+input, textarea, select, button {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+/* HTML5 요소의 display 속성 설정 */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}

@@ -1,0 +1,74 @@
+.calendar-date {
+  width: 90%;
+  height: 100%;
+}
+table {
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+  table-layout: fixed; /* 셀 크기 고정 */
+}
+th {
+  padding-top: 15px;
+  font-weight: bold;
+  color: #333;
+  border-bottom: 2px solid #dddddd;
+  height: 40px; /* 요일 칸 높이 고정 */
+}
+td {
+  text-align: left;
+  padding: 5px;
+  border: 1px solid #dddddd;
+  max-height: calc((100% - 40px) / 6); /* 높이 6줄 나눔 */
+  vertical-align: top;
+  padding: 10px;
+  height: 100px;
+}
+tr {
+  color: #555;
+  font-weight: bold;
+  border: 1px solid #dddddd;
+  position: relative; /* 자식 요소의 절대 위치를 위한 기준 */
+}
+.sunday {
+  color: red;
+}
+
+.saturday {
+  color: blue;
+}
+.prev-month,
+.next-month {
+  color: #cccccc;
+}
+.calendar-day.today {
+  position: relative;
+}
+.today .today-indicator {
+  background-color: #7fe5a1;
+  border-radius: 0px 30px 30px 30px;
+  color: white;
+  font-weight: bold;
+  display: inline-block;
+  padding: 5px;
+  text-align: center;
+  width: 42px;
+  height: 35px;
+  line-height: 20px;
+  top: 5px;
+  left: 5px;
+}
+
+/* 스케줄 막대 스타일링 */
+.schedule-bar {
+  background-color: #4caf50; /* 예시 색상 */
+  color: white;
+  padding: 2px 4px;
+  margin-top: 2px;
+  border-radius: 4px;
+  font-size: 12px;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

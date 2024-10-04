@@ -1,0 +1,92 @@
+main{
+    width: 100%;
+}
+main .login{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    margin: auto;
+    z-index: 34;
+}
+/* ----- 상단 LOGO 부분 ----- */
+main .login .top{
+    width: 100%;
+    padding: 6vh 53px;
+}
+/* ----- 중간 TEXT 부분 ----- */
+main .login .text{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 986px;
+    height: 217px;
+    margin: 17vh auto 0;
+}
+.login .text .text-head{
+    font-family: "Noto sans KR";
+    font-size: 83px;
+    font-weight: bold;
+    letter-spacing: -2px;
+    text-align: center;
+}
+.login .text .text-cont{
+    font-family: "Noto sans KR";
+    font-size: 26px;
+    line-height: 40px;
+    letter-spacing: -2px;
+    text-align: center;
+}
+/* ----- 중간 BUTTON 부분 ----- */
+main .login .login-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 388px;
+    height: 81px;
+    border: 1px solid #43E2BD;
+    border-radius: 15px;
+    background-color: #ffffff;
+    margin:45px auto 0;
+}
+.login .login-btn img{
+    width: 28px;
+    height: 28px;
+    margin-right: 30px;
+}
+.login .login-btn span{
+    font-family: "Noto Sans KR";
+    font-size: 24px;
+    line-height: 24px;
+    color: #43E2BD;
+    vertical-align: middle;
+}
+main .login .login-btn:hover.login-btn{
+    background-color: #43E2BD;
+}
+main .login .login-btn:hover.login-btn>span{
+    color: #ffffff;
+}
+/* ----- 하단 BACKGROUND 부분 ----- */
+main .background{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    z-index: 12;
+}
+main .background .wave1{
+    position: absolute;
+    width: 100%;
+    margin: auto;
+    height: 30vh;
+    z-index: 2;
+    bottom: 0;
+}
+main .background .wave2{
+    position: absolute;
+    width: 100%;
+    margin: auto;
+    height: 40vh;
+    z-index: 1;
+    bottom: 0;
+}

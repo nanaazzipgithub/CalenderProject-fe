@@ -1,0 +1,941 @@
+:root {
+  --main-color: #43e2bd;
+}
+/*----------------------------------메인페이지 영역 END----------------------------------*/
+main {
+  display: flex;
+  width: 100%;
+  height: fit-content;
+}
+
+/*----------------------왼쪽 사이드바----------------------*/
+main .sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 333px;
+  height: 1080px;
+  padding: 56px 28px;
+  background-color: #43e2bd;
+}
+/*-----------사이드바상단(로고, 날씨)-----------*/
+.sidebar .sidebar-top {
+  height: 199px;
+  margin-bottom: 52px;
+}
+.sidebar-top .sidebar-logo {
+  width: 218px;
+  height: 32px;
+  margin: 0 auto 48px;
+  cursor: pointer;
+}
+.sidebar-top .sidebar-logo a {
+  width: 100%;
+}
+.sidebar-top .sidebar-logo a img {
+  width: 14em;
+}
+.sidebar-top .sidebar-weather {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 124px;
+  padding: 26px 25px;
+  background-color: rgb(255, 255, 255, 50%);
+  opacity: 100%;
+  border-radius: 20px;
+}
+.sidebar-weather .sidebar-weather-info {
+  width: fit-content;
+}
+.sidebar-weather .sidebar-weather-info .sidebar-weather-text {
+  font-family: "Inter";
+  font-size: 16px;
+  color: #3fb499;
+}
+.sidebar-weather .sidebar-weather-info .sidebar-weather-temp {
+  font-family: "Inter";
+  font-size: 50px;
+  font-weight: bold;
+  color: #3fb499;
+}
+.sidebar-weather .sidebar-weather-icon {
+  width: 116px;
+  height: 111px;
+}
+/*-----------사이드바하단(간단한일정)-----------*/
+.sidebar .sidebar-bottom {
+  height: 720px;
+}
+.sidebar-bottom .sidebar-schedule {
+  width: 100%;
+  height: 684px;
+  padding: 38px 20px;
+  background-color: #fff;
+  border-radius: 1.2em;
+  overflow: scroll;
+  overflow: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE, Edge */
+}
+.sidebar-schedule::-webkit-scrollbar {
+width: 0;
+color: transparent;
+}
+.sidebar-schedule .sidebar-today {
+  height: 34px;
+}
+.sidebar-schedule .sidebar-today span {
+  font-family: "Noto Sans Kr";
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 15px;
+}
+.sidebar-schedule .sidebar-today::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #f4f4f4;
+  margin-top: 17px;
+}
+.sidebar-schedule .sidebar-schedule-list {
+  margin-top: 19px;
+}
+.sidebar-schedule .sidebar-schedule-list li {
+  margin-bottom: 12px;
+}
+.sidebar-schedule-list li .sidebar-list-box {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 40px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 10px 16px;
+  position: relative;
+}
+.sidebar-list-cont {
+  display: flex;
+  align-items: flex-start;
+}
+.sidebar-list-box .sidebar-list-cont img {
+  width: 8px;
+  height: 8px;
+  margin: 5px 8px 0 0;
+}
+.sidebar-list-box .sidebar-list-cont span {
+  width: 134px;
+  display: inline-block;
+  font-family: "Noto sans kr";
+  font-size: 14px;
+
+}
+.sidebar-list-box .sidebar-list-close {
+  display: none;
+  position: absolute;
+  top: 50%;
+  right: 1em;
+  transform: translateY(-50%);
+  width: 0.688em;
+  height: 0.688em;
+}
+.sidebar-list-box .sidebar-list-close::before {
+  content: '';
+  position: absolute;
+  inset: -0.5em;
+}
+
+.sidebar-schedule-list li:hover .sidebar-list-box {
+  background-color: #f6f6f6;
+}
+.sidebar-schedule-list li:hover .sidebar-list-box .sidebar-list-close {
+  display: block;
+}
+.sidebar-list-box.sidebar-new-item {
+  height: 40px;
+  margin-bottom: 12px;
+  padding: 10px 16px;
+  border-radius: 15px;
+  background-color: #f6f6f6;
+  display: none;
+}
+.sidebar-schedule-input {
+  background-color: transparent;
+  border: none;
+}
+.sidebar-schedule .sidebar-schedule-add {
+  display: flex;
+  width: 100%;
+  height: 38px;
+  padding: 10px 14px;
+}
+.sidebar-schedule .sidebar-schedule-add img {
+  margin-right: 6px;
+}
+.sidebar-schedule .sidebar-schedule-add span {
+  font-size: 12px;
+  color: #aaaaaa;
+  line-height: 12px;
+}
+/*----------------------왼쪽 사이드바 END----------------------*/
+/*----------------------오른쪽 달력----------------------*/
+main .calendar {
+  width: 100%;
+  margin: auto;
+}
+.calendar .calendar-box {
+  width: 1476px;
+  height: 967px;
+  margin: auto;
+  border: 2px solid #f0f0f0;
+  border-radius: 20px;
+  box-shadow: 0px 0px 20px rgb(0, 0, 0, 20%);
+}
+/*-----------오른쪽달력상단(날짜확인 및 설정)-----------*/
+.calendar-box .calendar-box-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 41px 77px;
+}
+.calendar-box-head .calendar-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 190px;
+}
+.calendar-info .calendar-month {
+  font-family: "Inter";
+  font-size: 78px;
+  font-weight: bold;
+  line-height: 78px;
+}
+.calendar-info .calendar-year {
+  font-family: "Inter";
+  font-size: 32px;
+  line-height: 48px;
+}
+.calendar-box-head .calendar-select {
+  display: flex;
+  justify-content: space-between;
+  width: 294px;
+  z-index: 888;
+}
+.calendar-box-head .calendar-select p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 28px;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+.calendar-box-head .calendar-select p span {
+  font-size: 16px;
+  letter-spacing: -2px;
+  user-select: none;
+}
+.calendar-select .calendar-select-month {
+  width: 140px;
+  height: 42px;
+  border: 2px solid #dddddd;
+  border-radius: 10px;
+  padding: 9px 0;
+}
+.calendar-select-month .calendar-select-month-box {
+  width: 140px;
+  height: 200px;
+  border: 2px solid #dddddd;
+  border-radius: 10px;
+  padding: 24px 0;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+.calendar-select-month .calendar-select-month-list {
+  text-align: center;
+  width: 100%;
+  height: 146px;
+  overflow: scroll;
+}
+.calendar-select-month .calendar-select-month-list li {
+  margin-bottom: 17px;
+  cursor: pointer;
+  user-select: none;
+}
+.calendar-select .calendar-select-year {
+  width: 140px;
+  height: 42px;
+  border: 2px solid #dddddd;
+  border-radius: 10px;
+  padding: 9px 0;
+}
+.calendar-select-year .calendar-select-year-box {
+  width: 140px;
+  height: 200px;
+  border: 2px solid #dddddd;
+  border-radius: 10px;
+  padding: 24px 0;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+.calendar-select-year .calendar-select-year-list {
+  text-align: center;
+  width: 100%;
+  height: 146px;
+  overflow: scroll;
+}
+.calendar-select-year .calendar-select-year-list li {
+  margin-bottom: 17px;
+  cursor: pointer;
+  user-select: none;
+}
+/*------스크롤바 숨김처리------*/
+.calendar-select-year-list::-webkit-scrollbar {
+  display: none;
+}
+.calendar-select-month-list::-webkit-scrollbar {
+  display: none;
+}
+/*-----------오른쪽달력하단(달력표 및 이동화살표)-----------*/
+.calendar-box .calendar-box-cont {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 772px;
+  margin: auto;
+}
+.calendar-box-cont .calendar-arrow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 772px;
+  z-index: 777;
+}
+.calendar-arrow .arrow-left {
+  position: relative;
+  cursor: pointer;
+}
+.calendar-arrow .arrow-left img {
+  position: absolute;
+  left: 28px;
+}
+.calendar-arrow .arrow-right {
+  position: relative;
+  cursor: pointer;
+}
+.calendar-arrow .arrow-right img {
+  position: absolute;
+  right: 28px;
+}
+/*----------------------오른쪽 달력 END-----------------------*/
+/*----------------------------------메인페이지 영역 END----------------------------------*/
+
+/*----------------------------------일정 조회 모달영역----------------------------------*/
+/* 일정 조회 모달 - bg */
+.modal-schedule-view {
+  position: fixed;
+  width: 100%;
+  min-height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: none;
+}
+
+.modal-schedule-view .modal-view-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* 모달 창 header */
+.modal-view-date {
+  width: 942px;
+  height: 800px;
+  position: relative;
+  background-color: var(--main-color);
+  border-radius: 20px;
+}
+
+/* header - 날짜 부분 */
+.modal-date-display {
+  height: 114px;
+  display: flex;
+  align-items: center;
+  padding: 46px;
+}
+.modal-date-display p {
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+}
+.view-year {
+  font-size: 1.75rem;
+  text-decoration-line: underline overline;
+  text-underline-offset: 6px;
+  margin-right: 19px;
+}
+.view-month {
+  font-size: 3rem;
+  position: relative;
+}
+.view-separator {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 10px;
+  padding-top: 10px;
+  transform: rotate(11deg);
+}
+.view-day {
+  align-self: flex-start;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+/* header - 모달 창 닫기 버튼 */
+.view-close-button {
+  background: url(../assets/img/close-button.svg) no-repeat;
+  width: 24px;
+  height: 20px;
+  position: absolute;
+  top: 23px;
+  right: 26px;
+}
+
+/* header - 추가 버튼 */
+.view-add-button {
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 25px;
+  position: absolute;
+  top: 48px;
+  right: 62px;
+  padding: 7px 28px;
+  font-size: 1.063rem;
+  line-height: 1;
+}
+
+/* main - bg */
+.modal-view-content {
+  width: 932px;
+  height: 681px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  border-radius: 20px;
+  margin: 5px;
+  padding: 46px;
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+  overflow-y: scroll;
+  overflow: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE, Edge */
+}
+.modal-view-content::-webkit-scrollbar {
+  width: 0;
+  color: transparent;
+}
+
+/* 일정 box */
+.modal-view-box {
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.12);
+}
+
+/* 제목 설정 */
+.modal-view-title {
+  display: flex;
+  padding: 12.5px 25px;
+  align-items: center;
+  position: relative;
+  border-bottom: 1px solid #ddd;
+  font-size: 1.125rem;
+}
+/* 일정 시간 */
+[class|="view-time"] {
+  font-family: "Inter", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+.modal-view-time {
+  display: flex;
+  margin: 21px 0 0 25px;
+}
+.view-time-start {
+  padding-left: 25px;
+  position: relative;
+}
+.view-time-start::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: url(../assets/img/alarm.svg) no-repeat;
+  width: 16px;
+  height: 16px;
+}
+.view-time-separator {
+  padding: 0 6.5px;
+}
+
+/* 일정 내용 */
+.view-description {
+  margin: 11px 33px 23px 25px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-height: 1.5;
+}
+/*----------------------------------일정 조회 모달 END----------------------------------*/
+/*----------------------------------일정 관리 모달 영역----------------------------------*/
+.modal-schedule-edit {
+  position: fixed;
+  width: 100%;
+  min-height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  /* display: none; */
+}
+.modal-edit-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.modal-edit-cont {
+  background-color: #43e2bd;
+  border-radius: 20px;
+  width: 780px;
+  height: 650px;
+  font-family: "Noto Sans KR", sans-serif;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.modal-header {
+  background-color: #43e2bd;
+  color: black;
+  padding: 25px 39px;
+  display: flex;
+  align-items: center;
+}
+
+.modal-title {
+  font-family: "Noto Sans KR";
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  flex-grow: 1;
+}
+
+#close-btn {
+  display: flex;
+  align-self: flex-start;
+  height: 20px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.modal-content {
+  margin: 0 5px;
+  height: 480px;
+  padding: 0 40px;
+  background-color: white;
+  border-radius: 20px 20px 0 0;
+}
+
+.modal-content-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 30px;
+}
+
+.modal-content-top:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  margin-top: 21px;
+  background-color: #dddddd;
+}
+
+/* ---------- 시작일자 CSS 추가함 ---------- */
+
+.modal-content-start {
+  margin-left: 5px;
+}
+
+/* ---------- 완료일자 CSS 추가함 ---------- */
+.modal-content-end {
+  margin-right: 5px;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  height: 48px;
+  margin-bottom: 15px;
+}
+
+.input-group p {
+  font-family: "Inter";
+  font-size: 23px;
+  font-weight: 500;
+  letter-spacing: -2px;
+}
+
+.input-group textarea {
+  width: 60px;
+  height: 47px;
+  margin-left: 24px;
+  padding: 6px 6px;
+  text-align: center;
+  border: 1px solid #dddddd;
+  border-radius: 7px;
+  background-color: #f6f6f6;
+  font-size: 24px;
+  font-weight: 600;
+  outline: none;
+}
+
+/* ---------- 반복주기 CSS 추가함 ---------- */
+
+.modal-content-repeat {
+  width: 100%;
+  margin-left: 4px;
+}
+
+.input-group .repeat-box {
+  position: relative;
+  width: 128px;
+  height: 47px;
+  margin-left: 24px;
+  text-align: center;
+  border: 1px solid #dddddd;
+  border-radius: 7px;
+  background-color: #f6f6f6;
+  font-size: 24px;
+  font-weight: 600;
+  outline: none;
+}
+
+.input-group .repeat-temp {
+  width: 11%;
+  height: 16px;
+  border: 1px solid #dddddd;
+  border-radius: 7px;
+  background-color: #f6f6f6;
+  padding: 22px 10px 23px 17px;
+  font-family: "Noto sans KR";
+  font-size: 26px;
+  resize: none;
+  outline: none;
+  overflow: auto;
+  text-align: center;
+  margin-left: 22px;
+}
+
+.repeat-box .repeat-text {
+  font-family: "Inter";
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 46px;
+  letter-spacing: -2px;
+  user-select: none;
+  cursor: pointer;
+}
+
+.repeat-box .repeat-list {
+  position: relative;
+  width: 100%;
+  height: 139px;
+  padding: 10px 0;
+  margin-top: 18px;
+  background-color: #ffffff;
+  border-radius: 7px;
+  box-shadow: 0 0 10px rgb(0, 0, 0, 15%);
+  cursor: pointer;
+  overflow: auto;
+  display: none;
+}
+
+.repeat-list::-webkit-scrollbar {
+  display: none;
+}
+
+.repeat-list li {
+  width: 100%;
+  padding: 5px 0;
+}
+
+.repeat-list li span {
+  font-family: "Noto sans kr";
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: -2px;
+}
+
+/* ---------- 반복주기 CSS END ---------- */
+
+.start-date-input,
+.end-date-input,
+.start-time-input,
+.end-time-input {
+  padding: 6px 16px;
+  border: 1px solid #dddddd;
+  border-radius: 7px;
+  background-color: #f6f6f6;
+  font-size: 24px;
+  font-weight: 600;
+  outline: none;
+  user-select: none;
+}
+
+.time-badge {
+  display: flex;
+  align-items: center;
+  column-gap: 6px;
+  color: #aaaaaa;
+  font-size: 15px;
+  font-weight: 500;
+  margin-left: 17px;
+}
+
+.textarea-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+textarea {
+  width: 100%;
+  height: 200px;
+  border: 1px solid #dddddd;
+  border-radius: 7px;
+  background-color: #f6f6f6;
+  padding: 20px 26px;
+  font-family: "Noto sans KR";
+  font-size: 26px;
+  resize: none;
+  outline: none;
+  overflow: auto;
+}
+
+.modal-footer {
+  margin: 0 5px;
+  display: flex;
+  justify-content: center;
+  column-gap: 10px;
+  background-color: white;
+  border-radius: 0 0 20px 20px;
+  padding-bottom: 34px;
+}
+
+.footer-btn {
+  width: 110px;
+  height: 38px;
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 18px;
+  background-color: #43e2bd;
+  color: white;
+  margin: 0 25px;
+}
+
+.date-picker {
+  position: absolute;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.header button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+#prevMonth,
+#nextMonth {
+  font-weight: bold;
+}
+
+#currentMonth {
+  font-weight: bold;
+}
+
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 3px;
+}
+
+.sun {
+  color: red;
+}
+
+.sat {
+  color: blue;
+}
+
+.day {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  width: 30px;
+  height: 30px;
+  margin: 2px;
+  border-radius: 50%;
+  cursor: pointer;
+  text-align: center;
+  font-size: 16px;
+}
+
+.day.other-month {
+  color: #ccc;
+}
+
+.day:hover,
+.day.selected {
+  background-color: #6277e0;
+  color: white;
+}
+
+.day.today {
+  font-weight: bold;
+  width: 30px;
+  height: 30px;
+  margin: 2px 0 0 2px;
+}
+
+.start-time,
+.end-time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.start-time input,
+.end-time input {
+  width: 120px;
+  text-align: center;
+  font-size: 18px;
+  border: none;
+  outline: none;
+}
+
+.start-time input:focus,
+.end-time input:focus {
+  font-weight: bold;
+}
+
+#start-confirm,
+#end-confirm {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #6277e0;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.date-input,
+.time-input {
+  cursor: pointer;
+}
+/*----------------------------------일정 관리 모달 END----------------------------------*/
+
+/*----------------------------------일정 삭제 모달 Start----------------------------------*/
+.modal-schedule-delete {
+  position: fixed;
+  width: 100%;
+  min-height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  display: none;
+}
+
+.modal-delete-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 508px;
+  height: 163px;
+  background-color: #fff;
+  border: 3px solid var(--main-color);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.delete-txt {
+  margin-bottom: 21px;
+  font-weight: 500;
+}
+.delete-txt strong {
+  font-weight: 500;
+}
+
+.delete-confirmation-btn,
+.delete-cancel-btn {
+  padding: 6px 20px;
+  border-radius: 5px;
+  border: 1px solid var(--main-color);
+  font-weight: 500;
+}
+
+.delete-confirmation-btn {
+  background-color: var(--main-color);
+  color: #fff;
+  margin-right: 21px;
+}
+.delete-cancel-btn {
+  background-color: #fff;
+}
+
+.modal-title {
+  background-color: var(--main-color);
+  border: none;
+}
